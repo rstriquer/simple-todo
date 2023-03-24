@@ -1,0 +1,27 @@
+version: '3.7'
+
+networks:
+  local-vpc:
+    driver: bridge
+
+volumes:
+  database:
+   driver: local
+
+services:
+
+  database:
+    image: mysql:5.7
+    networks:
+      - local-vpc
+    environment:
+      - MYSQL_USER=${DATABASE_USER:-todolist}
+      - MYSQL_PASSWORD=${DATABASE_PASSWORD:-123456}
+      - MYSQL_ROOT_PASSWORD=${DATABASE_ROOT_PASSWORD:-root}
+      - LANG=C.UTF_8
+      - TZ=${DATABASE_WORKSPACE_TIMEZONE:-America/Sao_Paulo}
+    volumes:
+      - ${DATABASE_HOST_DATA_PATH:-./storage/docker}/mysql:/var/lib/mysql
+    ports:
+      - "${DATABASE_PORT:-3306}:3306"
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci', '--skip-character-set-client-handshake']
