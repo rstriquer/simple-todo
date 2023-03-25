@@ -14,10 +14,6 @@ use App\Http\Controllers\Api\TodoController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::name('api.')->group(function() {
     Route::name('list')->get('/tasks', [TodoController::class, 'index']);
     Route::name('done')->patch('/tasks/done', [TodoController::class, 'update']);
