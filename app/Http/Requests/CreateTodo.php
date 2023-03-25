@@ -24,8 +24,16 @@ class CreateTodo extends FormRequest
     public function rules()
     {
         return [
-            'done' => 'required',
+            'done' => 'required|in:yes,no,true,false,0,1',
             'task' => 'required|string',
+        ];
+    }
+
+    public function messages() {
+        return [
+            'done.required' => 'Field "done" must be present on query',
+            'done.in' => 'Field "done" must be exactly one of the following values: "yes", "no", "true", "false", "0", "1"',
+            'task.required' => 'Field "task" must be present on query',
         ];
     }
 }
