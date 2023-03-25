@@ -8,11 +8,11 @@ Autores: [@rstriquer](https://gist.io/@rstriquer/4e8012db1a55bebdc99672d2d178bba
 Licence: [MIT](https://choosealicense.com/licenses/mit/)
 ## Used Stack
 
-* **Front-end:** Vue3, Bootstrap
+* **Front-end:** Vue 3, Bootstrap 4
 
-* **Back-end:** Laravel9
+* **Back-end:** Laravel 9
 
-* **Infrastructure:** Docker, Mysql
+* **Infrastructure:** Docker 20, Mysql 5.7
 
 
 ## Install
@@ -46,3 +46,19 @@ npm install
 ```
 
 If you whish you can populate the database with some lines with the seeder running ```./artisan db:seed```
+
+## Running
+
+Start docker and run the following lines, each separately in a separate terminal shell.
+
+```bash
+nvm use && npm run dev
+./artisan serv
+```
+
+to kill the running scripts do as following
+
+```bash
+
+```
+
