@@ -55,10 +55,3 @@ Start docker and run the following lines, each separately in a separate terminal
 nvm use && npm run dev
 ./artisan serv
 ```
-
-to kill the running scripts do as following
-
-```bash
-
-```
-
