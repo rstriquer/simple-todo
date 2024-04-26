@@ -12,7 +12,7 @@ Licence: [MIT](https://choosealicense.com/licenses/mit/)
 
 * **Back-end:** Laravel 9
 
-* **Infrastructure:** Docker 20, Mysql 5.7
+* **Infrastructure:** Docker 20, Mysql Server 5.7
 
 
 ## Install
